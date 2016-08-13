@@ -28,3 +28,5 @@ Route::get('/location', function () {
 	return view('discard');
 });
 
+Route::get('/location/{id}/{item}', ['uses' => 'discardController@subcategories']);
+
