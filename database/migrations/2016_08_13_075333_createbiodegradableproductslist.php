@@ -12,7 +12,7 @@ class Createbiodegradableproductslist extends Migration
      */
     public function up()
     {
-        Schema::create('biodegradableProducts', function (Blueprint $table) {
+        Schema::create('biodegradable_products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('item');
             $table->boolean('biodegradable');
@@ -26,6 +26,6 @@ class Createbiodegradableproductslist extends Migration
      */
     public function down()
     {
-        Schema::drop('biodegradableProducts');
+        Schema::drop('biodegradable_products');
     }
 }

@@ -36,11 +36,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             	WHAT DO YOU WANT TO DISPOSE OF?
             </div>
         </div>
-    <form>
+    <form method="POST" action="/biodegradable/rgsubmit">
+    	<input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="row">
         	<div class="col m3 s2"></div>
     		<div class="col m6 s5">
-        		<input id="item" name="item" type="text" class="form-control">
+        		<input id="wasteitem" name="wasteitem" type="text" class="form-control">
         	</div>
         	<div class="col m1 s1">
         		<button id="micbutton" name="micbutton" type="button" class="btn btn-small hide-on-med-and-up">
@@ -92,5 +93,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
       }
     </script>
+    <script src="{{  asset('packages/home/js/bootstrap.js') }}"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     </body>
 </html>
