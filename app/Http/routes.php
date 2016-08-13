@@ -18,17 +18,13 @@ Route::get('/', function () {
 Route::get('/biodegradable', function () {
 	return view('decomposable');
 });
-
 Route::post('/biodegradable/rgsubmit','whichdustbinController@checkDB');
-
 Route::get('/biodegradable/checkmaterial/{object}/{material}', ['uses' => 'whichdustbinController@checkMaterial']);
 
 
 Route::get('/location', function () {
 	return view('discard');
 });
-
 Route::get('/location/display/{category}/{subcategory}',['uses' => 'discardController@getlocation']);
-
 Route::get('/location/{id}/{item}', ['uses' => 'discardController@subcategories']);
-
+Route::get('/details/{id}', ['uses' => 'discardController@details']);

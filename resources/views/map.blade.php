@@ -2,9 +2,10 @@
 <html>
 <style type="text/css">
 html, body {
-  height: 80%;
+  height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 #map {
   height: 100%;
@@ -12,36 +13,46 @@ html, body {
 </style>
 <body>
 <div id="map"></div>
-<form>
-<input id = "yourinputlat" type= "text" value="0">
-<input id = "yourinputlng" type= "text" value ="0">
-</form>
 <!-- Replace the value of the key parameter with your own API key. -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRoF20UcsDJVruk5fU0KTzsQzHVW5GXkI&callback=initMap">
+<script defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRoF20UcsDJVruk5fU0KTzsQzHVW5GXkI&callback=MapView">
 </script>
 <script>
-function initMap() {
-  var latlon;
+function MapView() {
+  var latlon={lat: 21.262437, lng:72.345234};
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: {lat: 21.262437, lng:72.345234}
+    zoom: 10,
+    center: latlon
+  });
+  var curr = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: latlon,
+    icon: "{!! asset('home_images/mapmarker.png') !!}"
   });
 var values = {!! $values !!};
 var i;
+var marker=[];
   for(i=0; i<values.length; i++){
-    alert(values[i]);
+    console.log(values[i]);
     latlon = {
-      lat:  values[i]['lat'] ,
-      lng :  values[i]['long']
+      lat: parseFloat(values[i]['lat']),
+      lng: parseFloat(values[i]['long'])
     };
-  var marker + '.' + i = new google.maps.Marker({
+  marker[i] = new google.maps.Marker({
       map: map,
       draggable: false,
       animation: google.maps.Animation.DROP,
-      position: latlon
+      position: latlon,
+      title:''+i
   });
+  marker[i].addListener('click', function(){
+      window.location='/details/'+values[parseInt(this.title)]['refid'];
+    });
 }
-  
+  console.log(marker);
+
 }
 </script>
 </body>
