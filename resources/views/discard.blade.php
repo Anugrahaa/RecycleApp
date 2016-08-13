@@ -12,72 +12,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
   <!-- Compiled and minified JavaScript -->
   <script src="{{ asset('packages/materialize/js/materialize.min.js') }}"></script>
-          
+  <style type="text/css">
+    html{
+      height:100%;
+    }
+    body{
+      min-height: 100%;
+      overflow: hidden;
+    }
+    .container{
+      min-height: 100%;
+    }
+    .col:hover{
+      cursor: pointer;
+      box-shadow: 1px 1px;
+    }
+  </style>
 </head>
     <body>
-        <div class="row" style="margin-top:10%;">
-            <div class="col m1"></div>
-            <div class="col m10">
-            	WHAT DO YOU WANT TO DISPOSE OF?
-            </div>
+        <div class="row valign-wrapper" style="margin-bottom:0px;">
+        <div class="col m4 s4 z-depth-2 red valign-wrapper center-align" style="height:33vh; shadow:">Automotive</div>
+        <div class="col m4 s4 z-depth-2 yellow valign-wrapper center-align" style="height:33vh;">Batteries</div>
+        <div class="col m4 s4 z-depth-2 green valign-wrapper center-align" style="height:33vh;">Electrical&Electronics</div>
         </div>
-        <form>
-        <div class="row">
-        	<div class="col m3 s2"></div>
-    		<div class="col m6 s5">
-        		<input type="text" class="form-control">
-        	</div>
-        	<div class="col m1 s1">
-        		<button type="button" class="btn btn-small" id="button-play-ws">
-        			<img src="" alt="Mic"></img>
-        		</button>
-        	</div>
-        </div>
-        <div class="row">
-        	<div class="col m3 s2"></div>
-        	<div class="col m6 s5">
-        		<button type="submit" class="btn btn-primary btn-large">
-        		SO, WHICH BIN?
-        		</button>
-        	</div>
-        </div>
-        </div>
-        </div>
-    </form>
 
-        <a href="biodegradable" class="col m4">
+        <div class="row center-align" style="margin-bottom:0px;">
+        <div class="col m4 s4 z-depth-5 indigo valign-wrapper" style="height:33vh;">Glass</div>
+        <div class="col m4 s4 z-depth-5 orange valign-wrapper" style="height:33vh;">Metal</div>
+        <div class="col m4 s4 z-depth-5 deep-orange valign-wrapper" style="height:33vh;">Wood</div>
+        </div>
 
-            <div class="card medium">
-              <div class="card-image">
-              <img src="{{ asset('home_images/decompose.jpg') }}" alt="Card image">
-              <span class="card-title">Card Title</span>
-                </div>
-              <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div  class="card-action">
-              Find out if your product is biodegradable
-            </div>
-            </div>
-          </a>
-            <div class="col m2"></div>
-            <a href="discard" class="col m4">
+        <div class="row" style="margin-bottom:0px; text-align:center;">
+        <div class="col m4 s4 z-depth-3 lime accent-3 valign-wrapper center-align" style="height:33vh; text-align:center;">Plastic</div>
+        <div class="col m4 s4 z-depth-3 cyan accent-2 valign-wrapper center-align" style="height:33vh;">Paper</div>
+        <div class="col m4 s4 z-depth-3 light-green accent-2 valign-wrapper center-align" style="height:33vh;">Fabric</div>
+        </div>
 
-            <div class="card medium">
-              <div class="card-image">
-              <img src="{{ asset('home_images/decompose.jpg') }}" alt="Card image">
-              <span class="card-title">Card Title</span>
-                </div>
-              <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-            </div>
-            </a>
-    </div>
     </body>
 </html>

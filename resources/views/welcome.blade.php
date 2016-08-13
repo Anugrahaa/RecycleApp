@@ -108,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <p>Have something that you need to dispose of? Prefer to give it for recycling? 
                 Find out locations near you that accept your discardable items.</p>
             </div>
-            <a class="clickable" href="biodegradable">
+            <a class="clickable" href="location">
             <div class="card-action">
             Where do I recycle?
             </div>
