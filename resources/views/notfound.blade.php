@@ -30,13 +30,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
     <body>
         <div class="row" style="margin-top:10%;">
-            <div class="col m1"></div>
-            <div class="col m10 heading">
+            <div class="col m10 s12 offset-m1 heading">
             SORRY ITEM NOT FOUND. PLEASE ENTER AGAIN!
             </div>
         </div>
         <div class="row">
-              <button onclick = "window.location='{{ url("/biodegradable") }}'" type="submit" class="btn col m6 s5 offset-m3 offset-s2 btn-primary btn-large heading">
+              <button onclick = "window.location='{{ url("/biodegradable") }}'" type="submit" class="btn col m6 s6 offset-m3 offset-s3 btn-primary btn-large heading">
             GO BACK
             </button>
         </div>

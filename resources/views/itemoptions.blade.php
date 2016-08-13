@@ -30,17 +30,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
     <body>
         <div class="row" style="margin-top:10%;">
-            <div class="col m1"></div>
-            <div class="col m10 heading">
+            <div class="col m10 s12 offset-m1 heading">
             	WHICH MATERIAL IS THE {{ $input }} MADE OF? 
             </div>
         </div>
         @foreach($materials as $material)
-        <div class="row">
-            <button id="{{ $material['material'] }} . {{ $input }}" onclick="send(this.id)" class="btn col m4 s3 btn-primary btn-medium" style="margin:5px;">
+                <div class="row">
+
+            <button id="{{ $material['material'] }} . {{ $input }}" onclick="send(this.id)" class="btn col m6 s6 offset-m3 offset-s3 btn-primary btn-medium">
             {{ $material['material'] }}
-            </button>
-        </div>   
+            </button>  
+                    </div>
+         
         @endforeach
 
 
@@ -53,7 +54,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
  }
  </script>
-    
+        
         <script src="{{  asset('packages/home/js/bootstrap.js') }}"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 

@@ -32,7 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <body>
         <div class="row" style="margin-top:7%;">
             <div class="col m10 s10 heading offset-m1 offset-s1">
-            	THE {{ $item }} {{ $object }} IS <span id="yesorno"></span>
+            	THE {{ $item }} {{ $object }} IS <span class="col m10 s10 heading offset-m1 offset-s1" id="yesorno"></span>
             </div>
         </div>
         <div class="row">
@@ -42,7 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class ="row">
             <div class="col m10 s10 heading offset-m1 offset-s1">      
         Toss it in the <span id="redorgreen"></span> bin
-        </div>
+            </div>
         </div>
         
 
