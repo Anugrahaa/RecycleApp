@@ -10,11 +10,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <link rel="stylesheet" href="{{ asset('packages/materialize/css/materialize.min.css') }}">
   <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
-
   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <script src="{{ asset('packages/materialize/js/materialize.min.js') }}"></script>
+
+          
        <style>
        body{
        	overflow-x: hidden;
@@ -22,7 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        .heading{
        		font-family: 'Indie Flower', cursive;
        		font-size:4rem;
-       		font-weight: bold;
+       		/*font-weight: bold;*/
        		text-align: center;
        		color:black;
        }
@@ -92,8 +93,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
       }
     </script>
-        <script src="{{  asset('packages/home/js/bootstrap.js') }}"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-
     </body>
 </html>

@@ -8,16 +8,65 @@
 <meta name="keywords" content="Inventor Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <link rel="stylesheet" href="{{ asset('packages/materialize/css/materialize.min.css') }}">
 
   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <script src="{{ asset('packages/materialize/js/materialize.min.js') }}"></script>
   <style>
     body{
       background-image: url("{{ asset('home_images/bg.jpg') }}");
       background-repeat: no-repeat;
       background-size: cover;
       overflow-x: hidden; 
+    }
+    #pic1, #pic2{
+      -webkit-animation: card_zoom 1s;
+      animation: card_zoom 1s;
+    }
+    @-webkit-keyframes card_zoom{
+      0%{
+       /* position: relative;
+        top: -1rem;*/
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+     /* 25%{
+        /*position: relative;
+        top: 0rem;*/
+       /* -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+      40%{
+        /*position: relative;
+        top: -0.5rem;*/
+        /*-webkit-transform: scale(1);
+        transform: scale(1);
+      }*/
+      50%{
+        position: relative;
+        top: 0rem;
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+      }
+     /* 80%{
+        /*position: relative;
+        top: -0.4rem;*/
+        /*-webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }/*
+      75%{
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }*/
+      100%{
+        /*position: relative;
+        top: 0rem;*/
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        /*-webkit-transform: scale(1);
+        transform: scale(1);*/
+
+      }
     }
     .clickable:hover{
         opacity:0.9;
@@ -33,7 +82,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
     <body>
         <div class="row" style="height:80%; margin-top:10%;">
-        <div class="col m4 s10 offset-m1 offset-s1">
+        <div id="pic1" class="col m4 s10 offset-m1 offset-s1">
             <div class="card medium">
               <div class="card-image">
               <img src="{{ asset('home_images/decompose.jpg') }}" alt="Card image" style="object-fit:contain;">
@@ -49,7 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </a>
             </div>
           </div>
-            <div class="col m4 s10 offset-m2 offset-s1">
+            <div id="pic2" class="col m4 s10 offset-m2 offset-s1">
 
             <div class="card medium">
               <div class="card-image" style="text-align:center; vertical-align:middle;">
@@ -59,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <p>Have something that you need to dispose of? Prefer to give it for recycling? 
                 Find out locations near you that accept your discardable items.</p>
             </div>
-            <a class="clickable" href="biodegradable">
+            <a class="clickable" href="location">
             <div class="card-action">
             Where do I recycle?
             </div>
@@ -67,8 +116,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             </div>
     </div>
-        <script src="{{  asset('packages/home/js/bootstrap.js') }}"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-
-    </body>
+  </body>
 </html>
