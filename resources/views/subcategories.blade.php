@@ -9,7 +9,7 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="{{ asset('packages/materialize/css/materialize.min.css') }}">
-
+  <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
   <!-- Compiled and minified JavaScript -->
   <script src="{{ asset('packages/materialize/js/materialize.min.js') }}"></script>
   <style type="text/css">
@@ -20,8 +20,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       min-height: 100%;
       overflow: hidden;
     }
-    .container{
-      min-height: 100%;
+    div{
+      font-family: 'Indie Flower', cursive;
+      text-align: center;
+
+    }
+    span{
+      position: relative;
+      left: 20%;
     }
     .col:hover{
       cursor: pointer;
@@ -30,7 +36,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   </style>
 </head>
     <body>
-      <input type="hidden" id="data" value="{{$id.$item.$subcategories}}"/>
         <div class="row valign-wrapper" style="margin-bottom:0px;">
         <div id="1" class="col m4 s4 z-depth-2 red valign-wrapper center-align" style="height:33vh; shadow:"></div>
         <div id="2" class="col m4 s4 z-depth-2 yellow valign-wrapper center-align" style="height:33vh;"></div>
@@ -51,14 +56,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <script type="text/javascript">
         flip();
           function flip(){
-            var id = 
-            // {!! $subcategories !!}.length
-            // for(var i=0; i<9; i++){
-            //   if(i=={!! $id !!}){
-                document.getElementById(""+{!! $id !!}).innerHTML = {!! $item !!};
-              // }
+            var subcategories = {!! $subcategories !!};
+            var n = subcategories.length;
+              var i=0,j=1;
+                document.getElementById({!! $id !!} ).innerHTML = "<span>"+'{!! $item !!}'+"</span>";
+                document.getElementById({!! $id !!} ).style.fontSize = "4rem";
+
+              console.log(subcategories);
+              for(;i<n;)
+              {console.log(subcategories[i]['subcategory']);
+              if(j=={!! $id !!})
+              {
+                j++;
+              }
+              else{
+                document.getElementById(j).innerHTML = "<span>"+subcategories[i]['subcategory']+"</span>";
+                i++;
+                j++;
+              }
             }
+          }
 
         </script>
+        <script src="{{  asset('packages/home/js/bootstrap.js') }}"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    
     </body>
 </html>
