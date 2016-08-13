@@ -13,6 +13,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
   <style>
+    body{
+      background-image: url("{{ asset('home_images/bg.jpg') }}");
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow-x: hidden; 
+    }
     .clickable:hover{
         opacity:0.9;
         color:white;
@@ -27,16 +33,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
     <body>
         <div class="row" style="height:80%; margin-top:10%;">
-            <div class="col m1"></div>
-        <div href="biodegradable" class="col m4">
+        <div class="col m4 s10 offset-m1 offset-s1">
             <div class="card medium">
               <div class="card-image">
               <img src="{{ asset('home_images/decompose.jpg') }}" alt="Card image" style="object-fit:contain;">
-              <span class="card-title">Card Title</span>
-                </div>
+              </div>
               <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <p>Confused whether your trash belongs in the red or green bin?
+                Find out if your item is biodegradable or not, and help save the environment.</p>
             </div>
             <a class="clickable" href="biodegradable">
               <div  class="card-action">
@@ -45,17 +49,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </a>
             </div>
           </div>
-            <div class="col m2"></div>
-            <div href="discard" class="col m4">
+            <div class="col m4 s10 offset-m2 offset-s1">
 
             <div class="card medium">
               <div class="card-image" style="text-align:center; vertical-align:middle;">
               <img src="{{ asset('home_images/discard.jpg') }}" alt="Where to recycle" style="object-fir:contain;">
-              <span class="card-title">Card Title</span>
-                </div>
+              </div>
               <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <p>Have something that you need to dispose of? Prefer to give it for recycling? 
+                Find out locations near you that accept your discardable items.</p>
             </div>
             <a class="clickable" href="biodegradable">
             <div class="card-action">
