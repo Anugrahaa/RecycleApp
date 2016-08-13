@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-<title>IncredibleNITT| Home</title>
+<title>RecycleIt| Home</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -12,42 +12,56 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-          
+  <style>
+    .clickable:hover{
+        opacity:0.9;
+        color:white;
+    }
+    .clickable{
+      background-color:#d87967;
+      color:white;
+      text-transform: uppercase;
+      text-align:center;
+    }
+  </style>
 </head>
     <body>
         <div class="row" style="height:80%; margin-top:10%;">
             <div class="col m1"></div>
-        <div class="col m4">
-
+        <div href="biodegradable" class="col m4">
             <div class="card medium">
               <div class="card-image">
-              <img src="{{ asset('home_images/decompose.jpg') }}" alt="Card image">
+              <img src="{{ asset('home_images/decompose.jpg') }}" alt="Card image" style="object-fit:contain;">
               <span class="card-title">Card Title</span>
                 </div>
               <div class="card-content">
               <p>I am a very simple card. I am good at containing small bits of information.
               I am convenient because I require little markup to use effectively.</p>
             </div>
-            <a href="decomposable" class="card-action">
-              Find out if your product is biodegradable
+            <a class="clickable" href="biodegradable">
+              <div  class="card-action">
+              Which bin do I toss it in?
+            </div>
             </a>
             </div>
-            </div>
+          </div>
             <div class="col m2"></div>
-            <div class="col m4">
+            <div href="discard" class="col m4">
 
             <div class="card medium">
-              <div class="card-image">
-              <img src="{{ asset('home_images/decompose.jpg') }}" alt="Card image">
+              <div class="card-image" style="text-align:center; vertical-align:middle;">
+              <img src="{{ asset('home_images/discard.jpg') }}" alt="Where to recycle" style="object-fir:contain;">
               <span class="card-title">Card Title</span>
                 </div>
               <div class="card-content">
               <p>I am a very simple card. I am good at containing small bits of information.
               I am convenient because I require little markup to use effectively.</p>
             </div>
+            <a class="clickable" href="biodegradable">
             <div class="card-action">
-              <a href="#">This is a link</a>
+            Where do I recycle?
             </div>
+          </a>
             </div>
             </div>
     </div>

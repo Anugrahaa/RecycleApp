@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/decomposable', function () {
+Route::get('/biodegradable', function () {
 	return view('decomposable');
 });
 
