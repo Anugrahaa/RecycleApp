@@ -26,11 +26,13 @@ function initMap() {
     zoom: 4,
     center: {lat: 21.262437, lng:72.345234}
   });
-
-  for(var i=0; i<{!! $values !!}.length; i++){
+var values = {!! $values !!};
+var i;
+  for(i=0; i<values.length; i++){
+    alert(values[i]);
     latlon = {
-      lat: {!! $values[i]['lat'] !!},
-      lng : {!! $values[i]['long'] !!}
+      lat:  values[i]['lat'] ,
+      lng :  values[i]['long']
     };
   var marker + '.' + i = new google.maps.Marker({
       map: map,

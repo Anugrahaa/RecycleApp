@@ -23,7 +23,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     div{
       font-family: 'Indie Flower', cursive;
       text-align: center;
-      font-size:1rem;
+
+      font-size: 1.5rem;
 
     }
     span{
@@ -61,7 +62,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             var n = subcategories.length;
               var i=0,j=1;
                 document.getElementById({!! $id !!} ).innerHTML = "<span>"+'{!! $item !!}'+"</span>";
-                document.getElementById({!! $id !!} ).style.fontSize = "4rem";
+                document.getElementById({!! $id !!} ).style.fontSize = "2rem";
+                document.getElementById({!! $id !!} ).style.fontWeight = "bold";
+
 
               console.log(subcategories);
               for(;i<n;)
@@ -78,6 +81,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             }
           }
 
+          var items = document.getElementsByClassName('col');
+         console.log(items);
+          for(var i=0; i<items.length; i++){
+            items[i].addEventListener('click',function(){
+              alert();
+              // console.log("in here"+this.innerHTML);
+              window.location = '/location/display/{!! $item !!}/'+(this.getElementsByTagName('span')[0].innerHTML);
+            }); 
+          }
+
         </script>
         <script type="text/javascript">
           var items = document.getElementsByTagName('span');
@@ -86,7 +99,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             items[i].addEventListener('click',function(){
               //alert(this.innerHTML);
               var item = {!! $item !!};
-              alert(item);
               window.location = '/location/display/'+item +'/'+(this.innerHTML);
             }) 
           }
