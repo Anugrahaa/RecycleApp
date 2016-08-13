@@ -19,6 +19,11 @@ Route::get('/biodegradable', function () {
 	return view('decomposable');
 });
 
+Route::get('/biodegradable/bincolor', function () {
+	return view('bincolor');
+});
+
 Route::get('/location', function () {
 	return view('discard');
 });
+
