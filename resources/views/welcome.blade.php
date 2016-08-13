@@ -87,7 +87,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <div class="card-image">
               <img src="{{ asset('home_images/decompose.jpg') }}" alt="Card image" style="object-fit:contain;">
               </div>
-              <div class="card-content">
+              <div cllocationass="card-content">
               <p>Confused whether your trash belongs in the red or green bin?
                 Find out if your item is biodegradable or not, and help save the environment.</p>
             </div>
@@ -102,7 +102,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             <div class="card medium">
               <div class="card-image" style="text-align:center; vertical-align:middle;">
-              <img src="{{ asset('home_images/discard.jpg') }}" alt="Where to recycle" style="object-fir:contain;">
+              <img src="{{ asset('home_images/discard.jpg') }}" alt="Where to recycle" style="object-fit:contain;">
               </div>
               <div class="card-content">
               <p>Have something that you need to dispose of? Prefer to give it for recycling? 

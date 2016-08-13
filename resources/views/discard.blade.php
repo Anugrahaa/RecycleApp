@@ -33,7 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="row valign-wrapper" style="margin-bottom:0px;">
         <div class="col m4 s4 z-depth-2 red valign-wrapper center-align" style="height:33vh; shadow:">Automotive</div>
         <div class="col m4 s4 z-depth-2 yellow valign-wrapper center-align" style="height:33vh;">Batteries</div>
-        <div class="col m4 s4 z-depth-2 green valign-wrapper center-align" style="height:33vh;">Electrical&Electronics</div>
+        <div class="col m4 s4 z-depth-2 green valign-wrapper center-align" style="height:33vh;">Electronics and Electricals</div>
         </div>
 
         <div class="row center-align" style="margin-bottom:0px;">
@@ -47,6 +47,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="col m4 s4 z-depth-3 cyan accent-2 valign-wrapper center-align" style="height:33vh;">Paper</div>
         <div class="col m4 s4 z-depth-3 light-green accent-2 valign-wrapper center-align" style="height:33vh;">Fabric</div>
         </div>
+        <script type="text/javascript">
+          var items = document.getElementsByClassName('col');
+         
+          for(var i=0; i<items.length; i++){
+            items[i].addEventListener('click',function(){
+              alert(this.innerHTML);
+            }) 
+          }
 
+        </script>
     </body>
 </html>
