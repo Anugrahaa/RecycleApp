@@ -18,14 +18,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           
        <style>
        body{
-       	overflow-x: hidden;
+        overflow-x: hidden;
        }
        .heading{
-       		font-family: 'Indie Flower', cursive;
-       		font-size:4rem;
-       		/*font-weight: bold;*/
-       		text-align: center;
-       		color:black;
+          font-family: 'Indie Flower', cursive;
+          font-size:2rem;
+          font-weight: bold;
+          text-align: center;
+          color:black;
        }
        </style>  
 </head>
@@ -33,25 +33,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="row" style="margin-top:10%;">
             <div class="col m1"></div>
             <div class="col m10 heading">
-            	WHAT DO YOU WANT TO DISPOSE OF?
+              WHAT DO YOU WANT TO DISPOSE OF?
             </div>
         </div>
     <form>
         <div class="row">
-        	<div class="col m3 s2"></div>
-    		<div class="col m6 s5">
-        		<input id="item" name="item" type="text" class="form-control">
-        	</div>
-        	<div class="col m1 s1">
-        		<button id="micbutton" name="micbutton" type="button" class="btn btn-small hide-on-med-and-up">
-        			<img src="" alt="Mic"></img>
-        		</button>
-        	</div>
+          <div class="col m3 s2"></div>
+        <div class="col m6 s5">
+            <input id="item" name="item" type="text" class="form-control">
+          </div>
+          <div class="col m1 s1">
+            <button id="micbutton" name="micbutton" type="button" class="btn btn-small hide-on-med-and-up">
+              <img src="" alt="Mic"></img>
+            </button>
+          </div>
         </div>
         <div class="row">
-            	<button type="submit" class="btn col m6 s5 offset-m3 offset-s2 btn-primary btn-large heading">
-        		SO, WHICH BIN?
-        		</button>
+              <button type="submit" class="btn col m6 s5 offset-m3 offset-s2 btn-primary btn-large heading">
+            SO, WHICH BIN?
+            </button>
         </div>   
     </form>
  
@@ -86,11 +86,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         };
 
         document.getElementById('micbutton').addEventListener('touchstart', function(){
-        	        setTimeout(recognizer.stop(),10000);
+                  setTimeout(recognizer.stop(),10000);
             recognizer.start();  
         });
 
       }
     </script>
+    
+        <script src="{{  asset('packages/home/js/bootstrap.js') }}"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     </body>
 </html>
