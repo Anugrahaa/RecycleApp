@@ -13,8 +13,12 @@ class CreateLocationDetailsTable extends Migration
     public function up()
     {
         Schema::create('recyclelocations', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->integer('refid');
+            $table->string('name');
+            $table->string('address');
+            $table->string('landmark');
+            $table->string('contact');
+            $table->float('rating');
         });
     }
 
