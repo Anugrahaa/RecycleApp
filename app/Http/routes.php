@@ -29,4 +29,6 @@ Route::get('/location', function () {
 Route::get('/location/display/{category}/{subcategory}',['uses' => 'discardController@getlocation']);
 Route::get('/location/{id}/{item}', ['uses' => 'discardController@subcategories']);
 Route::get('/details/{id}', ['uses' => 'discardController@details']);
-Route::post('/userlogin','userlogin@checkDB');
+Route::post('/usersignup','userlogin@signup');
+Route::post('/userlogin','userlogin@login');
+Route::get('/logout','userlogin@logout');
