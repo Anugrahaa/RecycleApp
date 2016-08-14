@@ -14,7 +14,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 
   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="{{ asset('packages/materialize/js/materialize.min.js') }}"></script>
+
        <style>
        body{
        	overflow-x: hidden;

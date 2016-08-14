@@ -8,6 +8,9 @@ use App\Http\Requests;
 use App\subcategory;
 use App\maplocation;
 use App\recyclelocation;
+use App\comment;
+use Session;
+
 
 class discardController extends Controller
 {
@@ -23,8 +26,10 @@ class discardController extends Controller
     	return view('map',compact('values'));
     }
 
-    public function details($id){
-      $details = recyclelocation::where('id',$id)->get()[0];
-      return view('details',compact('details'));
+    public function details(Request $request, $refid){
+      $details = recyclelocation::where('refid',$refid)->get()[0];
+      $comments  = comment::where('refid',$refid)->get();
+      $value = $request->session()->get('name', 'null');
+      return view('locationdetails')->with(compact('details'))->with(compact('comments'))->with(compact(['value']));
     }
 }
