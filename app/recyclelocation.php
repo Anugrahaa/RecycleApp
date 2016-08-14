@@ -7,7 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class recyclelocation extends Model
 {
     protected $fillable = [
-    'id',
+    'refid',
     'name',
-    ]
+    'address',
+    'landmark',
+    'contact',
+    'rating'
+    ];
+    	public $timestamps = false;
+
 }
