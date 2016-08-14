@@ -50,6 +50,9 @@ var marker=[];
   marker[i].addListener('click', function(){
       window.location='/details/'+values[parseInt(this.title)]['refid'];
     });
+  marker[i].addListener('touchstart', function(){
+      window.location='/details/'+values[parseInt(this.title)]['refid'];
+    });
 }
   console.log(marker);
 

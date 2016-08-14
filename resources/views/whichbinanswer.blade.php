@@ -9,7 +9,8 @@
 <meta name="keywords" content="Inventor Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1
+    "/>
 <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
   <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
@@ -22,21 +23,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        }
        .heading{
        		font-family: 'Indie Flower', cursive;
-       		font-size:4rem;
        		font-weight: bold;
        		text-align: center;
        		color:black;
        }
+       @media screen and (max-width: 600px){
+        img{
+          max-width:90%;
+          height: auto;
+        }
+        .heading{
+          font-size:2rem;
+        }
+
+      }
+      @media screen and (min-width: 601px){
+        img{
+          max-width:50%;
+          height: auto;
+        }
+        .heading{
+          font-size:4rem;
+        }
+      }
        </style>  
 </head>
     <body>
-        <div class="row" style="margin-top:7%;">
+        <div class="row" style="margin-top:5%;">
             <div class="col m10 s10 heading offset-m1 offset-s1">
             	THE {{ $item }} {{ $object }} IS <span class="col m10 s10 heading offset-m1 offset-s1" id="yesorno"></span>
             </div>
         </div>
         <div class="row">
-        <div id="binimg" class="col m4 s4 offset-m4 offset-s2 center-align" style="overflow:hidden;">
+        <div id="binimg" class="col m4 s8 offset-m4 offset-s2 center-align" style="overflow:hidden;">
         </div>
         </div>
         <div class ="row">
@@ -53,13 +72,13 @@ var binimg = document.getElementById('binimg')
 if({!! $biodegradable !!} == 1){
   yesorno.innerHTML = "BIODEGRADABLE";
     redorgreen.innerHTML = "GREEN";
-    binimg.innerHTML = "<img src={{ asset('home_images/greenbin.jpeg') }} style='min-width:30%;height:auto;'>";
+    binimg.innerHTML = "<img src={{ asset('home_images/greenbin.jpeg') }}>";
 }
 
 else{
   yesorno.innerHTML = "NON-BIODEGRADABLE";
   redorgreen.innerHTML = "RED";
-    binimg.innerHTML = "<img src={{ asset('home_images/redbin.jpg') }} style='max-width:30%;height:auto;'>";
+    binimg.innerHTML = "<img src={{ asset('home_images/redbin1.jpg') }}>";
 
 }
 </script>
