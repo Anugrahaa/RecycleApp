@@ -21,6 +21,7 @@ Route::get('/biodegradable', function () {
 Route::post('/biodegradable/rgsubmit','whichdustbinController@checkDB');
 Route::get('/biodegradable/checkmaterial/{object}/{material}', ['uses' => 'whichdustbinController@checkMaterial']);
 
+Route::get('/sentiment/{text}',['uses'=>'whichdustbinController@viewsentiment']);
 
 Route::get('/location', function () {
 	return view('discard');

@@ -9,6 +9,11 @@ use App\Http\Requests;
 use App\biodegradableProduct;
 use App\objectmaterialmap;
 
+use Guzzle\Http\Client;
+use Guzzle\Http\EntityBody;
+use Guzzle\Http\Message\Request as CRequest;
+use Guzzle\Http\Message\Response;
+
 class whichdustbinController extends Controller
 {
     public function checkDB(Request $request){
@@ -50,6 +55,15 @@ class whichdustbinController extends Controller
         		return view('whichbinanswer',['item' => $inputmaterial,'object'=>$object, 'biodegradable'=> $material->biodegradable]);
 			}
 	    }
+	}
+
+	public function viewsentiment($text){
+		$client = new Client("https://api.havenondemand.com/");
+		$request = $client->get("1/api/sync/analyzesentiment/v1?text=".$text."&apikey=6a2cdc1a-c2fb-4a61-8fa0-9fe37b18a362");
+		// $response= $request->send();
+	    $body = json_decode($request->getBody()->getContents(),true);
+	    // echo json_decode($body);
+	    echo $body;
 	}
 
 
