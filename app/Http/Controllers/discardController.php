@@ -29,7 +29,7 @@ class discardController extends Controller
     public function details(Request $request, $refid){
       $details = recyclelocation::where('refid',$refid)->get()[0];
       $comments  = comment::where('refid',$refid)->get();
-      $value = $request->session()->get('name', 'null');
+     $value = $request->session()->get('name', 'null');
       return view('locationdetails')->with(compact('details'))->with(compact('comments'))->with(compact(['value']));
     }
 }

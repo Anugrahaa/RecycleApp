@@ -43,8 +43,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         <div id="loginform" style="display:none;">
         <form method="POST" name="formlogin" id="formlogin">
-              <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+              <input type="hidden" name="option" value="1">
         <input type="text" id="username" name="username" placeholder="Username">
         <input type="password" id="password" name="password" placeholder="Password">
         <button type="submit" id="loginbutton">Login</button>
@@ -52,16 +52,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
 
         <div id="signupform" style="display:none;">
-        <form method="POST" name="sign-up" id="sign-up">
-              <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-        <input type="text" name="username" placeholder="Enter Username">
-        <input type="text" name="email" placeholder="Enter Email">
-        <input type="password" name="password" placeholder="Enter Pasword">
+        <form method="POST" name="formsignup" id="formsignup">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+<input type="hidden" name="option" value="0">
+        <input type="text" name="username" placeholder="Enter Username" required>
+        <input type="text" name="email" placeholder="Enter Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+        <input type="text" name="location" placeholder="Enter your City" required>
+        <input type="password" name="password" pattern=".{6,}" title="Six or more characters" placeholder="Enter Pasword" required>
         <button type="submit" id="signupbutton">Sign Up</button>
 
         </form>
         </div>
+
         </div>
 
         <div class="row" style="margin-top:10%;">
@@ -78,9 +80,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         @endforeach
         <div class="row">
-        <button class="btn col m6 s6 offset-m3 offset-s3 btn-primary btn-medium" id="Addcomment" onclick="popupdiv()">
-        Add a comment!
+        <button class="btn col m6 s6 offset-m3 offset-s3 btn-primary btn-medium" id="Addcomment.{{$value}}" onclick="popupdiv(this.id)">
+        Add a comment! 
         </button>
+        </div>
+        <div class="row" id="commentdiv" style="display:none;">
+        <form method="POST" name="formcomment" id="formcomment">
+        <input type="text" class="col m6 s6 offset-m3 offset-s3" id="commentbox">
+        <button type="submit" id="commentbutton">Enter</button>
+        </form>
         </div>
 
 <script>
@@ -88,15 +96,17 @@ var loginorsignup = document.getElementById('loginorsignup');
 var thebuttons = document.getElementById('thebuttons');
 var loginform = document.getElementById('loginform');
 var signupform = document.getElementById('signupform');
+var commentbox = document.getElementById("commentdiv");
 
-function popupdiv(){
-  var value = {!! $value !!};
-  alert(value);
-  if(value == null){
 
+function popupdiv(value){
+
+  val = value.split('.')[1];
+  alert(val);
+  if(val == 'null'){
     thebuttons.style.display = "block";  
-  }else {
-    addcomment();
+  }else{
+    addcomment(val);
   }
 }
 
@@ -104,10 +114,39 @@ function login(){
   thebuttons.style.display='none';
   loginform.style.display = 'block';
 }
+
+
 function signup(){
   thebuttons.style.display='none';
   signupform.style.display='block';
 }
+
+$(function(){
+$('#formsignup').on('submit',function(e){
+    $.ajaxSetup({
+        header:$('meta[name="_token"]').attr('content')
+    })
+    e.preventDefault(e);
+
+$.ajax({  
+type: "POST",
+url: "/usersignup",
+data: $(this).serialize(),
+cache: false,
+success: function(html) {
+alert(html['data']);
+thebuttons.style.display='none';
+signupform.style.display='none';
+loginform.style.display='block';
+},
+error: function(data){
+alert(data['data']);
+        }
+})
+});
+});
+
+
 $(function(){
 $('#formlogin').on('submit',function(e){
     $.ajaxSetup({
@@ -122,13 +161,23 @@ data: $(this).serialize(),
 cache: false,
 success: function(html) {
 alert(html['data']);
+addcomment();
 },
 error: function(data){
-
+alert(data['data']);
         }
 })
 });
 });
+
+
+function addcomment(username){
+thebuttons.style.display="none";
+loginform.style.display = 'none';
+signupform.style.display = 'none';
+commentbox.style.display = "block";
+//alert(username);
+}
 
 </script>
  

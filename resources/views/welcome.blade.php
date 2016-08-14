@@ -81,6 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   </style>
 </head>
     <body>
+    <a id="logout" href="/logout">Log Out</button>
         <div class="row" style="height:80%; margin-top:10%;">
         <div id="pic1" class="col m4 s10 offset-m1 offset-s1">
             <div class="card medium">
