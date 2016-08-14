@@ -27,6 +27,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       cursor: pointer;
       box-shadow: 1px 1px;
     }
+    @media screen and (min-width:900px){
     div{
       font-family: 'Indie Flower', cursive;
       text-align: center;
@@ -37,6 +38,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       position: relative;
       left: 20%;
     }
+  }
+  @media screen and (max-width:900px){
+    div{
+      font-family: 'Indie Flower', cursive;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    span{
+      position: relative;
+      left: 10%;
+    }
+  }
   </style>
 </head>
     <body>

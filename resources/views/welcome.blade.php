@@ -14,6 +14,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <script src="{{ asset('packages/materialize/js/materialize.min.js') }}"></script>
   <style>
     body{
+      background-color: black;
       background-image: url("{{ asset('home_images/bg.jpg') }}");
       background-repeat: no-repeat;
       background-size: cover;
@@ -25,10 +26,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     }
     @-webkit-keyframes card_zoom{
       0%{
-       /* position: relative;
-        top: -1rem;*/
-        -webkit-transform: scale(1);
-        transform: scale(1);
+        opacity:0.2;
+       /* -webkit-transform: scale(1);
+        transform: scale(1);*/
       }
      /* 25%{
         /*position: relative;
@@ -42,12 +42,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         /*-webkit-transform: scale(1);
         transform: scale(1);
       }*/
-      50%{
-        position: relative;
-        top: 0rem;
-        -webkit-transform: scale(1.2);
-        transform: scale(1.2);
-      }
+      /*50%{
+        opacity: 0.5;
+        /*-webkit-transform: scale(1.1);
+        transform: scale(1.1);*/
+      /*}
      /* 80%{
         /*position: relative;
         top: -0.4rem;*/
@@ -59,10 +58,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         transform: scale(1.1);
       }*/
       100%{
-        /*position: relative;
+        opacity: 1;
+       /* position: relative;
         top: 0rem;*/
-        -webkit-transform: scale(1);
-        transform: scale(1);
+        /*-webkit-transform: scale(1);
+        transform: scale(1);*/
         /*-webkit-transform: scale(1);
         transform: scale(1);*/
 
@@ -84,10 +84,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="row" style="height:80%; margin-top:10%;">
         <div id="pic1" class="col m4 s10 offset-m1 offset-s1">
             <div class="card medium">
-              <div class="card-image">
+              <div class="card-image" style="text-align:center; vertical-align:middle;">
               <img src="{{ asset('home_images/decompose.jpg') }}" alt="Card image" style="object-fit:contain;">
               </div>
-              <div cllocationass="card-content">
+              <div class="card-content">
               <p>Confused whether your trash belongs in the red or green bin?
                 Find out if your item is biodegradable or not, and help save the environment.</p>
             </div>
@@ -98,6 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </a>
             </div>
           </div>
+
             <div id="pic2" class="col m4 s10 offset-m2 offset-s1">
 
             <div class="card medium">

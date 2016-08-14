@@ -14,26 +14,68 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <script src="{{ asset('packages/materialize/js/materialize.min.js') }}"></script>
   <style type="text/css">
     html{
-      height:100%;
+      height:100vh;
     }
     body{
-      min-height: 100%;
+      min-height: 100vh;
       overflow: hidden;
+      height:auto;
     }
     div{
       font-family: 'Indie Flower', cursive;
       text-align: center;
-
       font-size: 1.5rem;
 
     }
-    span{
-      position: relative;
-      left: 20%;
-    }
+    
     .col:hover{
       cursor: pointer;
       box-shadow: 1px 1px;
+    }
+
+    .col{
+      -webkit-animation:flipTiles 1s;
+      animation: flipTiles 1s;
+    }
+
+    @-webkit-keyframes flipTiles{
+      0%{
+        -webkit-transform:rotateY(180deg);
+        transform: rotateY(180deg);
+      }
+      100%{
+        -webkit-transform:rotateY(360deg);
+        transform:rotateY(360deg);
+      }
+    }
+    @media screen and (max-width:900px){
+      #main{
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: default;
+      }
+      span{
+      position: relative;
+      left: 10%;
+      font-weight: normal;
+      font-size: 1rem;
+    }
+    
+    }
+    @media screen and (min-width:901px){
+      #main{
+        font-size: 1.5rem;
+        font-weight: bolder;
+        cursor: default;
+      }
+      span{
+      position: relative;
+      left: 20%;
+      font-weight: normal;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    
     }
   </style>
 </head>
@@ -50,20 +92,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div id="6" class="col m4 s4 z-depth-5 deep-orange valign-wrapper" style="height:33vh;"></div>
         </div>
 
-        <div class="row" style="margin-bottom:0px; text-align:center;">
-        <div id="7" class="col m4 s4 z-depth-3 lime accent-3 valign-wrapper center-align" style="height:33vh; text-align:center;"></div>
-        <div id="8" class="col m4 s4 z-depth-3 cyan accent-2 valign-wrapper center-align" style="height:33vh;"></div>
-        <div id="9" class="col m4 s4 z-depth-3 light-green accent-2 valign-wrapper center-align" style="height:33vh;"></div>
+        <div class="row" style="margin-bottom:0px; padding-bottom:0px; text-align:center;">
+        <div id="7" class="col m4 s4 z-depth-3 lime accent-3 valign-wrapper center-align" style="height:34vh; text-align:center;"></div>
+        <div id="8" class="col m4 s4 z-depth-3 cyan accent-2 valign-wrapper center-align" style="height:34vh;"></div>
+        <div id="9" class="col m4 s4 z-depth-3 light-green accent-2 valign-wrapper center-align" style="height:34vh;"></div>
         </div>
         <script type="text/javascript">
-        flip();
+        setTimeout(flip, 1200);
           function flip(){
             var subcategories = {!! $subcategories !!};
             var n = subcategories.length;
               var i=0,j=1;
-                document.getElementById({!! $id !!} ).innerHTML = "<span>"+'{!! $item !!}'+"</span>";
-                document.getElementById({!! $id !!} ).style.fontSize = "2rem";
-                document.getElementById({!! $id !!} ).style.fontWeight = "bold";
+                document.getElementById({!! $id !!} ).innerHTML = "<span id='main'>"+'{!! $item !!}'+"</span>";
+                 document.getElementById({!! $id !!}).style.cursor = 'default';
 
 
               console.log(subcategories);
@@ -84,9 +125,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           var items = document.getElementsByClassName('col');
          console.log(items);
           for(var i=0; i<items.length; i++){
+            if(i+1=={!! $id !!});
+            else{
             items[i].addEventListener('click',function(){
               window.location = '/location/display/{!! $item !!}/'+(this.getElementsByTagName('span')[0].innerHTML);
             }); 
+          }
           }
 
         </script>
