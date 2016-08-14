@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,14 +22,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
        <style>
        body{
-       	overflow-x: hidden;
+        overflow-x: hidden;
        }
        .heading{
-       		font-family: 'Indie Flower', cursive;
-       		font-size:3rem;
-       		font-weight: bold;
-       		text-align: center;
-       		color:black;
+          font-family: 'Indie Flower', cursive;
+          font-size:3rem;
+          font-weight: bold;
+          text-align: center;
+          color:black;
        }
        .subheading{
           font-family: 'Indie Flower', cursive;
@@ -134,7 +135,7 @@ var loginform = document.getElementById('loginform');
 var signupform = document.getElementById('signupform');
 
 var commentdiv = document.getElementById('commentDiv');
-var addcomment = document.getElementById('Addcomment');
+// var addcomment = document.getElementById('Addcomment');
 var commentbox = document.getElementById("commentdiv");
 
 function popupdiv(value){
@@ -144,9 +145,13 @@ function popupdiv(value){
 
     commentdiv.style.opacity = "0.1";
     thebuttons.style.display = "block";  
-    Addcomment.disabled=true;
+    document.getElementById('Addcomment.'+value).disabled=true;
   }else {
-    addcomment();
+    thebuttons.style.display="none";
+loginform.style.display = 'none';
+signupform.style.display = 'none';
+commentbox.style.display = "block";
+document.getElementById('Addcomment.'+value).disabled=true;
   }
 }
 
@@ -201,7 +206,12 @@ data: $(this).serialize(),
 cache: false,
 success: function(html) {
 alert(html['data']);
-addcomment();
+thebuttons.style.display="none";
+loginform.style.display = 'none';
+signupform.style.display = 'none';
+commentbox.style.display = "block";
+commentdiv.style.opacity = "1";  
+document.getElementById('Addcomment.'+value).disabled=true;
 },
 error: function(data){
 alert(data['data']);
@@ -211,13 +221,9 @@ alert(data['data']);
 });
 
 
-function addcomment(){
-thebuttons.style.display="none";
-loginform.style.display = 'none';
-signupform.style.display = 'none';
-commentbox.style.display = "block";
-//alert(username);
-}
+
+
+
 
 </script>
  
