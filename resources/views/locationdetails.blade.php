@@ -25,20 +25,45 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        }
        .heading{
        		font-family: 'Indie Flower', cursive;
-       		font-size:4rem;
+       		font-size:3rem;
        		font-weight: bold;
        		text-align: center;
        		color:black;
+       }
+       .subheading{
+          font-family: 'Indie Flower', cursive;
+          font-size:1.5rem;
+          font-weight: bold;
+          text-align: center;
+          color:black;
+       }
+       .username{
+          font-family: 'Indie Flower', cursive;
+          font-size: 1.5rem;
+       }
+       #loginorsignup{
+        position: absolute;
+
+        top: 50%;
+        bottom: 25%;
+        min-height: 50%;
+        min-width: 100%;
+        z-index: 100;
        }
        </style>  
 </head>
     <body>
     <div class="row" id="loginorsignup" style="min-height:30%;">
-    <div id="thebuttons" style="display:none;">
+      <div class="container white">
+    <div id="thebuttons" class="col m12 s12" style="display:none;">
+      <div class="row">
         <button onclick="login()" class="btn col m6 s6 offset-m3 offset-s3 btn-primary btn-medium" id="login">LOG IN
         </button>
+        </div>
+        <div class="row">
         <button onclick="signup()" class="btn col m6 s6 offset-m3 offset-s3 btn-primary btn-medium" id="signup">SIGN UP
         </button>
+      </div>
         </div>
 
         <div id="loginform" style="display:none;">
@@ -47,7 +72,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         <input type="text" id="username" name="username" placeholder="Username">
         <input type="password" id="password" name="password" placeholder="Password">
-        <button type="submit" id="loginbutton">Login</button>
+        <button type="submit" class="col m4 offset-m4 s6 offset-s3 btn btn-primary" id="loginbutton">Login</button>
         </form>
         </div>
 
@@ -58,43 +83,54 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <input type="text" name="username" placeholder="Enter Username">
         <input type="text" name="email" placeholder="Enter Email">
         <input type="password" name="password" placeholder="Enter Pasword">
-        <button type="submit" id="signupbutton">Sign Up</button>
+        <button type="submit" class="col m4 offset-m4 s6 offset-s3 btn btn-primary" id="signupbutton">Sign Up</button>
 
         </form>
         </div>
+      </div>
         </div>
-
+      <div id="commentDiv" class="container">
         <div class="row" style="margin-top:10%;">
             <div class="col m10 s12 offset-m1 heading">
               {{ $details['name'] }}
             </div>
         </div>
         <div class="row">
-        {{ $details['address']}} {{$details['landmark']}} 
+        <div class="col m10 s12 offset-m1 center-align subheading">{{ $details['address']}} {{$details['landmark']}} </div>
+        </div>
+        <div class="row">
+          <div class="col m4 offset-m4 center-align subheading" style="text-decoration:underline;">COMMENTS</div>
         </div>
         @foreach($comments as $comment)
-        <div class="row">
-              {{$comment['username']}}  -  {{$comment['comments']}}
-        </div>
+        <div class="row section">
+        <div class="col m10 s12 offset-m1 center-align">
+          <div class="divider"></div>
+          <span class="username">{{$comment['username']}}</span> says-<div class="comment"> "{{$comment['comments']}}"</div>
+        <div class="divider"></div>
+         </div>
         @endforeach
+          
         <div class="row">
-        <button class="btn col m6 s6 offset-m3 offset-s3 btn-primary btn-medium" id="Addcomment" onclick="popupdiv()">
+        <button class="btn col m6 s6 offset-m3 offset-s3 btn-primary btn-medium" id="Addcomment" onclick="popupdiv()" style="margin-top:10%;">
         Add a comment!
         </button>
         </div>
+        </div>
+      </div>
 
 <script>
 var loginorsignup = document.getElementById('loginorsignup');
 var thebuttons = document.getElementById('thebuttons');
 var loginform = document.getElementById('loginform');
 var signupform = document.getElementById('signupform');
-
+var commentdiv = document.getElementById('commentDiv');
+var addcomment = document.getElementById('Addcomment');
 function popupdiv(){
   var value = {!! $value !!};
-  alert(value);
   if(value == null){
-
+    commentdiv.style.opacity = "0.1";
     thebuttons.style.display = "block";  
+    Addcomment.disabled=true;
   }else {
     addcomment();
   }
